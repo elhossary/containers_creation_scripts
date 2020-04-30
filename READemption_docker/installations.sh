@@ -23,15 +23,19 @@ install_htslib(){
 install_segemehl_v2(){
 	curl www.bioinf.uni-leipzig.de/Software/segemehl/old/segemehl_0_2_0.tar.gz > segemehl_0_2_0.tar.gz
 	tar xzf segemehl_0_2_0.tar.gz
-	cd segemehl_*/segemehl/ && make && cd ../../
-	cp segemehl_0_2_0/segemehl/lack.x /usr/bin/lack.x
+	cd segemehl_*/segemehl/
+	make
+	cp *.x /usr/bin/
+	cd ../../
 }
 install_segemehl_v3(){
 	# Getting lack.x from Segemehl version 2 because it's removed from Segemehl version 3
 	curl www.bioinf.uni-leipzig.de/Software/segemehl/old/segemehl_0_2_0.tar.gz > segemehl_0_2_0.tar.gz
 	tar xzf segemehl_0_2_0.tar.gz
-	cd segemehl_*/segemehl/ && make && cd ../../
-	cp segemehl_0_2_0/segemehl/lack.x /usr/bin/lack.x
+	cd segemehl_*/segemehl/
+	make
+	cp lack.x /usr/bin/lack.x
+	cd ../../
 	
 	# Now install version 3
 	curl https://www.bioinf.uni-leipzig.de/Software/segemehl/downloads/segemehl-0.3.4.tar.gz > segemehl-0.3.4.tar.gz
