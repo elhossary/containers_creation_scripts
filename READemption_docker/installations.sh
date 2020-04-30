@@ -18,6 +18,7 @@ install_htslib(){
 	make
 	make install
 	cd ..
+	rm -rf segemehl*
 }
 install_segemehl_v2(){
 	curl www.bioinf.uni-leipzig.de/Software/segemehl/old/segemehl_0_2_0.tar.gz > segemehl_0_2_0.tar.gz
@@ -39,6 +40,7 @@ install_segemehl_v3(){
 	make all
 	cp *.x /usr/bin/
 	cd ..
+	rm -rf segemehl*
 }
 install_deseq2(){
 	Rscript -e 'if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")' -e 'BiocManager::install(c("DESeq2"))'
