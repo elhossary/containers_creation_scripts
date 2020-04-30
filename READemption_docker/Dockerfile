@@ -8,5 +8,5 @@ COPY ./installations.sh ./installations.sh
 RUN bash ./installations.sh
 LABEL READemption_ver=0.5.0
 LABEL Segemehl_ver=0.3.4
-LABEL Deseq2_ver=1.28
+LABEL DeSeq2_ver=1.28
 LABEL maintainer="Muhammad Elhossary <elhossary@zbmed.de>"
