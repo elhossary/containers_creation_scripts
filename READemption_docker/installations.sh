@@ -4,11 +4,11 @@ main(){
 	install_htslib
 	#install_segemehl_v2
 	install_segemehl_v3
-	#install_deseq2
-	#install_reademption
+	install_deseq2
+	install_reademption
 }
 install_prerequisites(){
-	apt-get -y install python3 python3-setuptools python3-pip python3-matplotlib cython3 zlib1g-dev	make libncurses5-dev r-base libxml2-dev curl tcl wget
+	apt-get -y install python3 python3-setuptools python3-pip python3-matplotlib cython3 zlib1g-dev	make libncurses5-dev r-base libxml2-dev curl tcl wget r-cran-xml libcurl4-openssl-dev
 }
 install_htslib(){
 	wget -c https://github.com/samtools/htslib/releases/download/1.10.2/htslib-1.10.2.tar.bz2
@@ -48,6 +48,7 @@ install_segemehl_v3(){
 }
 install_deseq2(){
 	Rscript -e 'if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")' -e 'BiocManager::install(c("DESeq2"))'
+	Rscript -e 'install.packages("gplots")'
 }
 install_reademption(){
 	pip3 install READemption
